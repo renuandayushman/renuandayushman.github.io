@@ -1,0 +1,39 @@
+{
+  "targetUrl": "https://renu-ayushman.wedding/#rsvp-section",
+  "generatedAt": "2026-11-11T14:39:54.899Z",
+  "recommendation": {
+    "forLetterpressAndHotFoil": "qr-classic-transparent.svg (Vector)",
+    "forCommercialPrinters": "qr-classic-dark.svg or qr-monogram-kasavu.svg (Vector)",
+    "forCanvaAndPhotoshop": "qr-monogram-kasavu.png or qr-classic-dark.png (2048x2048 px @ 300 DPI)"
+  },
+  "variants": [
+    {
+      "id": "qr-classic-dark",
+      "name": "Classic Dark Ink (Pure White Background)",
+      "description": "Ideal for 100% foolproof scanning on high-contrast printing or digital cards.",
+      "svg": "/qr-codes/qr-classic-dark.svg",
+      "png": "/qr-codes/qr-classic-dark.png"
+    },
+    {
+      "id": "qr-classic-transparent",
+      "name": "Classic Dark Ink (Transparent Background)",
+      "description": "Perfect for printing directly onto physical textured cotton-rag or ivory stationery cards.",
+      "svg": "/qr-codes/qr-classic-transparent.svg",
+      "png": "/qr-codes/qr-classic-transparent.png"
+    },
+    {
+      "id": "qr-kerala-sage",
+      "name": "Kerala Sadya Sage (Warm Ivory Background)",
+      "description": "Editorial wedding palette matching the Sadya Sage and deckled warm ivory theme.",
+      "svg": "/qr-codes/qr-kerala-sage.svg",
+      "png": "/qr-codes/qr-kerala-sage.png"
+    },
+    {
+      "id": "qr-monogram-kasavu",
+      "name": "Kasavu Gold & Sage with R&A Monogram",
+      "description": "Luxury stationery edition featuring an embedded Kerala Kasavu gold seal in the center.",
+      "svg": "/qr-codes/qr-monogram-kasavu.svg",
+      "png": "/qr-codes/qr-monogram-kasavu.png"
+    }
+  ]
+}

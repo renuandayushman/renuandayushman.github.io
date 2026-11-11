@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sage: #4A5D4E;
+    --vellum: #FAF7F2;
+    --gold: #C5A059;
+    --terracotta: #B85D43;
+    --charcoal: #222422;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #222422;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Subtle physical paper grain texture overlay */
+.paper-texture {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#C5A059 0.45px, transparent 0.45px), radial-gradient(#4A5D4E 0.45px, #FAF7F2 0.45px);
+  background-size: 18px 18px;
+  background-position: 0 0, 9px 9px;
+  background-blend-mode: soft-light;
+}
+
+/* Luxury Vellum Glass effect */
+.vellum-card {
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  box-shadow: 
+    0 4px 30px rgba(74, 93, 78, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.vellum-card-sage {
+  background: rgba(74, 93, 78, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(74, 93, 78, 0.18);
+}
+
+.vellum-dark {
+  background: rgba(34, 36, 34, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+/* Gold foil sheen text & border */
+.gold-shimmer {
+  background: linear-gradient(135deg, #A98442 0%, #E9D7AF 45%, #C5A059 70%, #866732 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: rgba(197, 160, 89, 0.4);
+}
+
+/* Deckled stationery edge effect */
+.deckled-border {
+  position: relative;
+}
+
+.deckled-border::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1px dashed rgba(197, 160, 89, 0.4);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8D8CC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9FB9A5;
+}
