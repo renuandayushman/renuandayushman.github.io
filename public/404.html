@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Renu & Ayushman — Wedding Celebration</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA redirect
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      // If navigating to /rsvp, redirect to /#rsvp-section
+      if (path.replace(/\/+$/, '').endsWith('/rsvp')) {
+        window.location.replace('/' + (search ? search + '&' : '?') + 'rsvp#rsvp-section');
+      } else {
+        window.location.replace('/' + (hash || ''));
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/">Renu & Ayushman Wedding Celebration</a>...</p>
+  </body>
+</html>

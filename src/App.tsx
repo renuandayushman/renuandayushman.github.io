@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BackgroundStationeryLayer } from './components/common/BackgroundStationeryLayer';
 import { HeaderNav } from './components/common/HeaderNav';
 import { HeroSection } from './components/sections/HeroSection';
 import { TimelineSection } from './components/sections/TimelineSection';
-import { VenueSection } from './components/sections/VenueSection';
-import { ExploreAlleppeySection } from './components/sections/ExploreAlleppeySection';
-import { GuestConnectionSection } from './components/sections/GuestConnectionSection';
-import { ConciergeSection } from './components/sections/ConciergeSection';
+import { VenueExploreSection } from './components/sections/VenueExploreSection';
+import { CrewTriviaSection } from './components/sections/CrewTriviaSection';
 import { RsvpSection } from './components/sections/RsvpSection';
 import { FooterSection } from './components/sections/FooterSection';
 import { AudioAmbientPlayer } from './components/common/AudioAmbientPlayer';
@@ -14,7 +13,7 @@ import { InviteQrModal } from './components/common/InviteQrModal';
 export const App: React.FC = () => {
   const [qrModalOpen, setQrModalOpen] = useState(false);
 
-  // Smooth auto-scroll for guests scanning the physical invite QR code
+  // Smooth auto-scroll for guests scanning physical invite QR code
   useEffect(() => {
     const handleDeepLink = () => {
       const isRsvpTarget =
@@ -32,9 +31,7 @@ export const App: React.FC = () => {
           }
         };
 
-        // Immediate attempt
         scrollToRsvp();
-        // Follow-ups to guarantee accurate positioning after webfonts and dynamic elements render
         const t1 = setTimeout(scrollToRsvp, 250);
         const t2 = setTimeout(scrollToRsvp, 750);
 
@@ -54,41 +51,38 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#222422] relative selection:bg-[#C5A059]/20 selection:text-[#4A5D4E]">
-      {/* Floating Header Navigation */}
+    <div className="min-h-screen text-[#222422] relative selection:bg-[#C5A059]/20 selection:text-[#4A5D4E] overflow-x-hidden">
+      {/* 1. Full-Bleed Layered Composition with Multi-Toned Parallax Botanicals */}
+      <BackgroundStationeryLayer />
+
+      {/* 2. Floating Header Navigation */}
       <HeaderNav />
 
-      {/* Main Sections */}
-      <main>
-        {/* 1. Hero: The Vellum Envelope */}
+      {/* 3. Main Page Flow */}
+      <main className="relative z-10">
+        {/* Hero: Wide 12-Column Editorial Spread */}
         <HeroSection />
 
-        {/* 2. Timeline: The Day's Flow */}
+        {/* The Day's Flow: Winding Scrollytelling River with 140px-180px Sketches */}
         <TimelineSection />
 
-        {/* 3. Venue & Stay: Punnamada Resort */}
-        <VenueSection />
+        {/* The Setting: Prominent Punnamada Showcase & Vintage Postcard Moodboard */}
+        <VenueExploreSection />
 
-        {/* 4. Explore Alleppey: Venice of the East */}
-        <ExploreAlleppeySection />
+        {/* The Guest Circle & Music: Flippable Icebreaker Cards, Spinning Vinyl Widget & Trivia */}
+        <CrewTriviaSection />
 
-        {/* 5. Guest Hub: Meet the Crew, Cab Pool & Trivia */}
-        <GuestConnectionSection />
-
-        {/* 6. Concierge: Who to Reach Out To */}
-        <ConciergeSection />
-
-        {/* 7. Native RSVP Portal & Gift Note */}
+        {/* RSVP Portal: 2-Column Wide Stationery Card */}
         <RsvpSection onOpenQrModal={() => setQrModalOpen(true)} />
       </main>
 
-      {/* Footer */}
+      {/* 4. Footer & Discreet Help Desk */}
       <FooterSection onOpenQrModal={() => setQrModalOpen(true)} />
 
-      {/* Ambient Backwater Audio Player Toggle */}
+      {/* 5. Ambient Backwater Audio Player Toggle */}
       <AudioAmbientPlayer />
 
-      {/* Physical Invite QR & Print Assets Modal */}
+      {/* 6. Physical Invite QR & Print Assets Modal */}
       <InviteQrModal isOpen={qrModalOpen} onClose={() => setQrModalOpen(false)} />
     </div>
   );

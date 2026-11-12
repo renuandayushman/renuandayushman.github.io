@@ -57,7 +57,7 @@ export const InviteQrModal: React.FC<InviteQrModalProps> = ({ isOpen, onClose })
   const [selectedVariant, setSelectedVariant] = useState<QrVariant>(QR_VARIANTS[0]);
   const [copied, setCopied] = useState(false);
 
-  const activeUrl = WEDDING_DATA.qrConfig?.activeUrl || 'https://renu-ayushman.wedding/#rsvp-section';
+  const activeUrl = WEDDING_DATA.qrConfig?.activeUrl || 'https://renuandayushman.github.io/#rsvp-section';
 
   const handleCopyUrl = () => {
     navigator.clipboard.writeText(activeUrl);

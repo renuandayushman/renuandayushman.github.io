@@ -1,171 +1,214 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Clock, MapPin, Sparkles, ChevronDown } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { WEDDING_DATA, TimelineEvent } from '../../data/weddingData';
 import {
-  NilavilakkuTempleLampIcon,
-  IntertwinedRingsIcon,
-  SadyaBananaLeafIcon,
-  LawnGamesIcon,
-  FireworksLakeIcon,
-  ClinkingFlutesIcon,
+  TempleLampLargeSketch,
+  RingsAndCakeLargeSketch,
+  SadyaLargeSketch,
+  LawnGamesLargeSketch,
+  FireworksLakeLargeSketch,
+  DinnerCelebrationsLargeSketch,
   BotanicalDivider,
 } from '../common/BotanicalMotifs';
 
 export const TimelineSection: React.FC = () => {
-  const [expandedEventId, setExpandedEventId] = useState<string | null>("registration-vows");
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const toggleEvent = (id: string) => {
-    setExpandedEventId(prev => prev === id ? null : id);
-  };
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end end"]
+  });
 
-  const getEventIcon = (iconName: TimelineEvent['iconName']) => {
+  const pathProgress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 24,
+    restDelta: 0.001
+  });
+
+  const renderIllustration = (iconName: TimelineEvent['iconName']) => {
     switch (iconName) {
       case 'temple':
-        return <NilavilakkuTempleLampIcon className="w-7 h-7 text-[#C5A059]" />;
+        return <TempleLampLargeSketch className="w-36 h-36 sm:w-44 sm:h-44" />;
       case 'rings':
-        return <IntertwinedRingsIcon className="w-7 h-7 text-[#C5A059]" />;
+        return <RingsAndCakeLargeSketch className="w-36 h-36 sm:w-44 sm:h-44" />;
       case 'sadya':
-        return <SadyaBananaLeafIcon className="w-7 h-7 text-[#4A5D4E]" />;
+        return <SadyaLargeSketch className="w-36 h-36 sm:w-44 sm:h-44" />;
       case 'games':
-        return <LawnGamesIcon className="w-7 h-7 text-[#73957B]" />;
+        return <LawnGamesLargeSketch className="w-36 h-36 sm:w-44 sm:h-44" />;
       case 'fireworks':
-        return <FireworksLakeIcon className="w-7 h-7 text-[#C5A059]" />;
-      case 'cocktail':
-        return <ClinkingFlutesIcon className="w-7 h-7 text-[#B85D43]" />;
+        return <FireworksLakeLargeSketch className="w-36 h-36 sm:w-44 sm:h-44" />;
+      case 'celebration':
+        return <DinnerCelebrationsLargeSketch className="w-36 h-36 sm:w-44 sm:h-44" />;
       default:
-        return <Sparkles className="w-6 h-6 text-[#C5A059]" />;
+        return null;
     }
   };
 
   return (
-    <section id="timeline-section" className="py-20 sm:py-28 px-4 max-w-4xl mx-auto relative overflow-hidden">
+    <section id="timeline-section" ref={containerRef} className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative z-10">
       
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <span className="text-xs uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-2">
+      <div className="text-center mb-16 sm:mb-24">
+        <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#C5A059] font-semibold block mb-1">
           Saturday, January 30, 2027
         </span>
         <h2 className="font-editorial text-4xl sm:text-5xl md:text-6xl text-[#222422]">
           The Day's Flow
         </h2>
-        <p className="font-editorial italic text-lg sm:text-xl text-[#4A5D4E] mt-3 max-w-xl mx-auto">
-          An intimate, celebratory journey from morning temple blessings to twilight backwater fireworks and starlit dancing.
+        <p className="font-editorial italic text-base sm:text-lg text-[#4A5D4E]/80 mt-2">
+          A serene journey along the backwaters from morning prayers to midnight stars
         </p>
-        <BotanicalDivider />
+        <BotanicalDivider className="my-6" />
       </div>
 
-      {/* Vertical Illustrated Timeline */}
-      <div className="relative w-full overflow-hidden">
-        {/* Central connecting line for desktop/tablet, left aligned for mobile */}
-        <div className="absolute left-5 sm:left-6 md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#C5A059]/30 via-[#4A5D4E]/30 to-[#C5A059]/30 transform md:-translate-x-1/2 pointer-events-none" />
+      {/* Winding Scrollytelling River Container */}
+      <div className="relative">
+        
+        {/* Animated Serpentine River SVG (Desktop/Tablet) */}
+        <div className="absolute inset-0 pointer-events-none hidden md:block" aria-hidden="true">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 800 2400"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <defs>
+              <linearGradient id="riverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#C5A059" stopOpacity="0.3" />
+                <stop offset="30%" stopColor="#4A5D4E" stopOpacity="0.4" />
+                <stop offset="70%" stopColor="#B85D43" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#C5A059" stopOpacity="0.4" />
+              </linearGradient>
+            </defs>
 
-        <div className="space-y-8 sm:space-y-12">
+            {/* Faint static river bed outline */}
+            <path
+              d="M 400 0 
+                 C 250 200, 200 350, 400 500 
+                 C 600 650, 600 800, 400 950 
+                 C 200 1100, 200 1250, 400 1400 
+                 C 600 1550, 600 1700, 400 1850 
+                 C 200 2000, 250 2200, 400 2400"
+              stroke="#DECDB5"
+              strokeWidth="4"
+              strokeDasharray="4 6"
+              opacity="0.5"
+            />
+
+            {/* Active animated scrollytelling river current */}
+            <motion.path
+              d="M 400 0 
+                 C 250 200, 200 350, 400 500 
+                 C 600 650, 600 800, 400 950 
+                 C 200 1100, 200 1250, 400 1400 
+                 C 600 1550, 600 1700, 400 1850 
+                 C 200 2000, 250 2200, 400 2400"
+              stroke="url(#riverGrad)"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+              style={{ pathLength: pathProgress }}
+            />
+          </svg>
+        </div>
+
+        {/* Milestones Flow */}
+        <div className="space-y-16 sm:space-y-24">
           {WEDDING_DATA.timeline.map((event, index) => {
-            const isEven = index % 2 === 0;
-            const isExpanded = expandedEventId === event.id;
+            const isLeft = event.side === 'left';
+            const tiltAngle = isLeft ? '-rotate-1' : 'rotate-1';
+            const sketchTilt = isLeft ? 'rotate-2' : '-rotate-2';
 
             return (
               <motion.div
                 key={event.id}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
-                className={`relative flex flex-col md:flex-row items-start w-full ${
-                  isEven ? 'md:flex-row-reverse' : ''
-                }`}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
               >
-                {/* Timeline Center Node / Illustrated Icon Badge */}
-                <div className="absolute left-5 sm:left-6 md:left-1/2 top-0 transform -translate-x-1/2 z-20 flex flex-col items-center">
-                  <button
-                    onClick={() => toggleEvent(event.id)}
-                    aria-label={`View details for ${event.title}`}
-                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-[#FAF7F2] border-2 shadow-md transition-all duration-300 hover:scale-110 ${
-                      isExpanded
-                        ? 'border-[#C5A059] ring-4 ring-[#C5A059]/20'
-                        : 'border-[#4A5D4E]/30 hover:border-[#C5A059]'
-                    }`}
-                  >
-                    {getEventIcon(event.iconName)}
-                  </button>
-                </div>
-
-                {/* Event Card Content */}
-                <div
-                  className={`ml-13 sm:ml-16 md:ml-0 md:w-[45%] w-[calc(100%-3.25rem)] sm:w-[calc(100%-4rem)] ${
-                    isEven ? 'md:pl-8' : 'md:pr-8'
-                  }`}
-                >
-                  <div
-                    onClick={() => toggleEvent(event.id)}
-                    className={`cursor-pointer group relative rounded-2xl p-5 sm:p-6 transition-all duration-300 border ${
-                      isExpanded
-                        ? 'bg-[#FAF7F2] border-[#C5A059]/60 shadow-vellum-hover ring-1 ring-[#C5A059]/30'
-                        : 'bg-[#FAF7F2]/80 backdrop-blur-sm border-[#4A5D4E]/15 hover:border-[#C5A059]/40 hover:bg-[#FAF7F2]'
-                    }`}
-                  >
-                    {/* Period tag & Timing */}
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <span className="text-[11px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full bg-[#4A5D4E]/10 text-[#4A5D4E]">
-                        {event.period}
-                      </span>
-                      <div className="flex items-center gap-1.5 text-xs font-semibold text-[#866732]">
-                        <Clock className="w-3.5 h-3.5" />
-                        <span>{event.time}</span>
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="font-editorial text-2xl sm:text-2xl text-[#222422] group-hover:text-[#4A5D4E] transition-colors">
-                      {event.title}
-                    </h3>
-                    <p className="text-xs uppercase tracking-wider text-[#C5A059] font-medium mt-0.5">
-                      {event.subtitle}
-                    </p>
-
-                    {/* Description */}
-                    <p className="text-sm text-[#4A4E4A] mt-3 leading-relaxed">
-                      {event.description}
-                    </p>
-
-                    {/* Expandable Details Tray */}
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        transition={{ duration: 0.3 }}
-                        className="mt-4 pt-4 border-t border-[#C5A059]/20 space-y-2 text-xs"
-                      >
-                        <div className="flex items-start gap-2 text-[#4A5D4E]">
-                          <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
-                          <span className="font-medium">{event.location}</span>
-                        </div>
-                        {event.dressCode && (
-                          <div className="flex items-start gap-2 text-[#7E3825] bg-[#FAF2EF] p-2 rounded-lg border border-[#B85D43]/20">
-                            <span className="font-semibold shrink-0">Attire:</span>
-                            <span>{event.dressCode}</span>
-                          </div>
-                        )}
-                      </motion.div>
-                    )}
-
-                    {/* Bottom expand toggle hint */}
-                    <div className="mt-3 flex items-center justify-end text-[11px] text-[#4A5D4E]/60 group-hover:text-[#4A5D4E]">
-                      <span className="mr-1">{isExpanded ? "Collapse" : "Details & Attire"}</span>
-                      <ChevronDown
-                        className={`w-3.5 h-3.5 transform transition-transform duration-300 ${
-                          isExpanded ? 'rotate-180 text-[#C5A059]' : ''
-                        }`}
-                      />
-                    </div>
+                
+                {/* Milestone Node on Center Line */}
+                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex-col items-center">
+                  <div className="w-10 h-10 rounded-full bg-[#FAF7F2] border-2 border-[#C5A059] shadow-md flex items-center justify-center text-xs font-mono font-bold text-[#866732]">
+                    0{index + 1}
                   </div>
                 </div>
+
+                {/* Left Column Component */}
+                <div
+                  className={`md:col-span-5 flex justify-center ${
+                    isLeft ? 'order-1 md:order-1 md:justify-end' : 'order-2 md:order-1 md:justify-start'
+                  }`}
+                >
+                  {isLeft ? (
+                    /* Text Card on Left */
+                    <div className={`stationery-card stationery-inner-border rounded-2xl p-6 sm:p-8 max-w-md w-full transform hover:rotate-0 transition-transform ${tiltAngle}`}>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full bg-[#4A5D4E]/10 text-[#4A5D4E]">
+                          {event.badge}
+                        </span>
+                        <span className="font-mono text-xs font-semibold text-[#866732] bg-white/70 px-2.5 py-0.5 rounded-full border border-[#C5A059]/30">
+                          {event.time}
+                        </span>
+                      </div>
+                      <h3 className="font-editorial text-2xl sm:text-3xl text-[#222422]">
+                        {event.title}
+                      </h3>
+                      <p className="font-editorial italic text-sm sm:text-base text-[#4A5D4E] mt-2">
+                        {event.caption}
+                      </p>
+                    </div>
+                  ) : (
+                    /* Large Sketch on Left */
+                    <div className={`postage-stamp rounded-3xl p-4 sm:p-6 flex items-center justify-center transform hover:rotate-0 transition-transform ${sketchTilt}`}>
+                      {renderIllustration(event.iconName)}
+                    </div>
+                  )}
+                </div>
+
+                {/* Empty Center Spacer for 12-Col Grid */}
+                <div className="hidden md:block md:col-span-2" />
+
+                {/* Right Column Component */}
+                <div
+                  className={`md:col-span-5 flex justify-center ${
+                    isLeft ? 'order-2 md:order-3 md:justify-start' : 'order-1 md:order-3 md:justify-end'
+                  }`}
+                >
+                  {isLeft ? (
+                    /* Large Sketch on Right */
+                    <div className={`postage-stamp rounded-3xl p-4 sm:p-6 flex items-center justify-center transform hover:rotate-0 transition-transform ${sketchTilt}`}>
+                      {renderIllustration(event.iconName)}
+                    </div>
+                  ) : (
+                    /* Text Card on Right */
+                    <div className={`stationery-card stationery-inner-border rounded-2xl p-6 sm:p-8 max-w-md w-full transform hover:rotate-0 transition-transform ${tiltAngle}`}>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full bg-[#B85D43]/10 text-[#B85D43]">
+                          {event.badge}
+                        </span>
+                        <span className="font-mono text-xs font-semibold text-[#866732] bg-white/70 px-2.5 py-0.5 rounded-full border border-[#C5A059]/30">
+                          {event.time}
+                        </span>
+                      </div>
+                      <h3 className="font-editorial text-2xl sm:text-3xl text-[#222422]">
+                        {event.title}
+                      </h3>
+                      <p className="font-editorial italic text-sm sm:text-base text-[#4A5D4E] mt-2">
+                        {event.caption}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
               </motion.div>
             );
           })}
         </div>
+
       </div>
+
     </section>
   );
 };
