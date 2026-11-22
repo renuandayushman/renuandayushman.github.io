@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="poolGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#06B6D4"/>
+      <stop offset="50%" stopColor="#0284C7"/>
+      <stop offset="100%" stopColor="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="duskSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#F43F5E"/>
+      <stop offset="40%" stopColor="#FB923C"/>
+      <stop offset="80%" stopColor="#FDE047"/>
+      <stop offset="100%" stopColor="#BAE6FD"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1000" height="420" fill="url(#duskSky)"/>
+  
+  <!-- Distant Lake Water line -->
+  <rect x="0" y="380" width="1000" height="60" fill="#0284C7" opacity="0.6"/>
+
+  <!-- Coconut Palms on horizon -->
+  <path d="M120 400 Q150 300 200 230" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M200 230 Q260 200 320 230" stroke="#15803D" stroke-width="6" fill="none"/>
+  <path d="M200 230 Q160 180 100 200" stroke="#15803D" stroke-width="6" fill="none"/>
+  <path d="M200 230 Q210 160 220 140" stroke="#15803D" stroke-width="6" fill="none"/>
+
+  <path d="M820 400 Q800 290 750 210" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M750 210 Q700 170 630 190" stroke="#15803D" stroke-width="6" fill="none"/>
+  <path d="M750 210 Q810 170 870 200" stroke="#15803D" stroke-width="6" fill="none"/>
+
+  <!-- Infinity Pool Edge Stone Deck -->
+  <polygon points="0,420 1000,420 1000,450 0,450" fill="#E2E8F0"/>
+  <rect x="0" y="445" width="1000" height="355" fill="url(#poolGrad)"/>
+
+  <!-- Water Ripple Caustics -->
+  <path d="M80 480 Q200 460 350 480 T680 480 T950 480" stroke="#E0F2FE" stroke-width="3" opacity="0.6" fill="none"/>
+  <path d="M50 540 Q180 520 380 540 T720 540 T960 540" stroke="#E0F2FE" stroke-width="3.5" opacity="0.7" fill="none"/>
+  <path d="M30 620 Q220 590 450 620 T800 620 T980 620" stroke="#E0F2FE" stroke-width="4" opacity="0.5" fill="none"/>
+  <path d="M40 710 Q250 680 500 710 T850 710" stroke="#BAE6FD" stroke-width="4" opacity="0.6" fill="none"/>
+
+  <!-- Sun Loungers by Poolside -->
+  <rect x="700" y="470" width="160" height="60" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="3" transform="rotate(-6 700 470)"/>
+  <rect x="710" y="460" width="40" height="40" rx="8" fill="#F59E0B" transform="rotate(-6 710 460)"/>
+
+  <!-- Tropical Frangipani / Plumeria floating flower -->
+  <circle cx="280" cy="560" r="14" fill="#FDE047"/>
+  <circle cx="280" cy="542" r="12" fill="#FFFFFF"/>
+  <circle cx="295" cy="552" r="12" fill="#FFFFFF"/>
+  <circle cx="290" cy="572" r="12" fill="#FFFFFF"/>
+  <circle cx="270" cy="572" r="12" fill="#FFFFFF"/>
+  <circle cx="265" cy="552" r="12" fill="#FFFFFF"/>
+
+  <!-- Placeholder Badge -->
+  <rect x="140" y="50" width="720" height="130" rx="20" fill="#0C4A6E" fill-opacity="0.85" stroke="#38BDF8" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="500" y="95" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#38BDF8" text-anchor="middle" letter-spacing="2">
+    PUNNAMADA LAKESIDE SWIMMING POOL
+  </text>
+  <text x="500" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#E2E8F0" text-anchor="middle">
+    Actual Pool Photograph Slot • Replace with resort-pool.jpg (1000 × 800)
+  </text>
+  <text x="500" y="155" font-family="monospace" font-size="12" fill="#FDE047" text-anchor="middle">
+    Freshwater Horizon Edge Overlooking Vembanad Lake
+  </text>
+</svg>

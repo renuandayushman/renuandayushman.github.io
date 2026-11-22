@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#E0F2FE"/>
+      <stop offset="50%" stopColor="#BAE6FD"/>
+      <stop offset="100%" stopColor="#FEF3C7"/>
+    </linearGradient>
+    <linearGradient id="lakeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.8"/>
+      <stop offset="60%" stopColor="#0284C7"/>
+      <stop offset="100%" stopColor="#0369A1"/>
+    </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#C2410C"/>
+      <stop offset="100%" stopColor="#9A3412"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="520" fill="url(#skyGrad)"/>
+  
+  <!-- Sun / Dawn Glow -->
+  <circle cx="850" cy="240" r="120" fill="#FDE047" opacity="0.45" filter="blur(20px)"/>
+  <circle cx="850" cy="240" r="70" fill="#FEF08A" opacity="0.8"/>
+
+  <!-- Distant Palm Silhouettes -->
+  <path d="M0 480 Q150 450 300 470 T600 460 T900 475 T1200 465 L1200 530 L0 530 Z" fill="#15803D" opacity="0.4"/>
+  <path d="M50 470 Q100 420 120 370 Q140 430 190 470" stroke="#166534" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M120 370 Q180 340 240 360" stroke="#166534" stroke-width="6" fill="none"/>
+  <path d="M120 370 Q80 330 30 350" stroke="#166534" stroke-width="6" fill="none"/>
+  <path d="M120 370 Q120 310 130 290" stroke="#166534" stroke-width="6" fill="none"/>
+
+  <path d="M1020 470 Q1050 400 1080 350 Q1110 410 1150 470" stroke="#166534" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M1080 350 Q1140 320 1200 340" stroke="#166534" stroke-width="6" fill="none"/>
+  <path d="M1080 350 Q1030 310 970 330" stroke="#166534" stroke-width="6" fill="none"/>
+
+  <!-- Heritage Resort Main Building Silhouette -->
+  <polygon points="320,490 420,380 520,490" fill="url(#roofGrad)"/>
+  <polygon points="480,490 600,340 720,490" fill="url(#roofGrad)"/>
+  <polygon points="680,490 780,390 880,490" fill="url(#roofGrad)"/>
+  <rect x="360" y="490" width="480" height="40" fill="#FAF5EF"/>
+  <!-- Teak Pillars -->
+  <line x1="390" y1="490" x2="390" y2="530" stroke="#78350F" stroke-width="6"/>
+  <line x1="450" y1="490" x2="450" y2="530" stroke="#78350F" stroke-width="6"/>
+  <line x1="510" y1="490" x2="510" y2="530" stroke="#78350F" stroke-width="6"/>
+  <line x1="590" y1="490" x2="590" y2="530" stroke="#78350F" stroke-width="6"/>
+  <line x1="670" y1="490" x2="670" y2="530" stroke="#78350F" stroke-width="6"/>
+  <line x1="750" y1="490" x2="750" y2="530" stroke="#78350F" stroke-width="6"/>
+  <line x1="810" y1="490" x2="810" y2="530" stroke="#78350F" stroke-width="6"/>
+
+  <!-- Waterfront Lawn & Dock -->
+  <rect x="0" y="525" width="1200" height="35" fill="#4ADE80" opacity="0.85"/>
+  <rect x="0" y="555" width="1200" height="15" fill="#78350F" opacity="0.6"/>
+
+  <!-- Vembanad Lake Water -->
+  <rect x="0" y="570" width="1200" height="230" fill="url(#lakeGrad)"/>
+
+  <!-- Water Wave lines -->
+  <path d="M50 610 Q120 600 200 610 T380 610 T560 610 T740 610 T920 610 T1100 610" stroke="#BAE6FD" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M100 660 Q200 650 320 660 T560 660 T800 660 T1040 660" stroke="#BAE6FD" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.5"/>
+  <path d="M40 720 Q160 710 280 720 T540 720 T820 720 T1100 720" stroke="#E0F2FE" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+  <!-- Traditional Shikara / Kettuvallam Wooden Boat in foreground -->
+  <path d="M220 650 Q280 665 370 665 Q450 665 480 645 Q440 635 360 635 Q270 635 220 650 Z" fill="#451A03"/>
+  <path d="M290 635 Q350 605 410 635" stroke="#D97706" stroke-width="4" fill="none"/>
+  <path d="M280 635 L420 635" stroke="#78350F" stroke-width="6"/>
+
+  <!-- Elegant Photography Placeholder Badge Frame -->
+  <rect x="180" y="80" width="840" height="140" rx="24" fill="#0F172A" fill-opacity="0.75" stroke="#FDE047" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="600" y="130" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#FEF08A" text-anchor="middle" letter-spacing="3">
+    PUNNAMADA RESORT • WATERFRONT EXTERIOR
+  </text>
+  <text x="600" y="168" font-family="system-ui, sans-serif" font-size="16" fill="#E2E8F0" text-anchor="middle">
+    Actual Resort Photograph Slot • Replace with resort-exterior.jpg (1200 × 800)
+  </text>
+  <text x="600" y="195" font-family="monospace" font-size="13" fill="#38BDF8" text-anchor="middle">
+    Heritage Kerala Clay-Roof Sanctuary • Vembanad Lake Lawns
+  </text>
+</svg>

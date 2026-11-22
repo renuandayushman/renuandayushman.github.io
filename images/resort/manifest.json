@@ -1,0 +1,55 @@
+{
+  "resortName": "Punnamada Resort",
+  "location": "Alleppey, Kerala",
+  "photoCategories": [
+    {
+      "id": "exterior",
+      "label": "Resort Exterior",
+      "description": "Lakeside facade, heritage clay tile roofs, and waterfront lawns",
+      "folder": "public/images/resort/exterior/",
+      "recommendedDimensions": "1200x800 or 1600x1060 (WebP / JPG)"
+    },
+    {
+      "id": "rooms",
+      "label": "Rooms & Accommodation",
+      "description": "Heritage teak villas, garden cottages, and open-air courtyard bathrooms",
+      "folder": "public/images/resort/rooms/",
+      "recommendedDimensions": "1200x800 or 1600x1060"
+    },
+    {
+      "id": "pool",
+      "label": "Swimming Pool",
+      "description": "Freshwater infinity pool overlooking Vembanad Lake",
+      "folder": "public/images/resort/pool/",
+      "recommendedDimensions": "1200x800"
+    },
+    {
+      "id": "dining",
+      "label": "Dining Areas",
+      "description": "Sadya banquet halls, lakeside cafes, and open-air breakfast pavilions",
+      "folder": "public/images/resort/dining/",
+      "recommendedDimensions": "1200x800"
+    },
+    {
+      "id": "outdoor",
+      "label": "Outdoor Spaces",
+      "description": "Lush coconut groves, celebration lawns, and stone pathways",
+      "folder": "public/images/resort/outdoor/",
+      "recommendedDimensions": "1200x800"
+    },
+    {
+      "id": "activities",
+      "label": "Activities & Common Areas",
+      "description": "Private resort jetty, Shikara canal cruises, Ayurvedic wellness, and recreation lounge",
+      "folder": "public/images/resort/activities/",
+      "recommendedDimensions": "1200x800"
+    },
+    {
+      "id": "surroundings",
+      "label": "Surroundings & Scenery",
+      "description": "Vembanad Lake horizon, Kuttanad lotus waterways, and dusk skies",
+      "folder": "public/images/resort/surroundings/",
+      "recommendedDimensions": "1200x800"
+    }
+  ]
+}

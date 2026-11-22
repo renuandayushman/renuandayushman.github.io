@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="canalWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#0284C7"/>
+      <stop offset="50%" stopColor="#0369A1"/>
+      <stop offset="100%" stopColor="#075985"/>
+    </linearGradient>
+    <linearGradient id="canopyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#F59E0B"/>
+      <stop offset="50%" stopColor="#FBBF24"/>
+      <stop offset="100%" stopColor="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canal Water Background -->
+  <rect width="1000" height="800" fill="url(#canalWater)"/>
+
+  <!-- Canal Bank Foliage Top -->
+  <path d="M0 0 L1000 0 L1000 200 Q800 240 600 180 T200 220 L0 180 Z" fill="#15803D" opacity="0.8"/>
+  <circle cx="150" cy="140" r="80" fill="#166534"/>
+  <circle cx="350" cy="120" r="90" fill="#14532D"/>
+  <circle cx="650" cy="130" r="100" fill="#166534"/>
+  <circle cx="850" cy="110" r="85" fill="#15803D"/>
+
+  <!-- Water Lily Pads / Lotus in Canals -->
+  <ellipse cx="200" cy="620" rx="45" ry="20" fill="#22C55E"/>
+  <circle cx="215" cy="610" r="14" fill="#F43F5E"/> <!-- Pink lotus -->
+  <ellipse cx="780" cy="670" rx="55" ry="24" fill="#22C55E"/>
+  <circle cx="800" cy="660" r="16" fill="#F43F5E"/>
+  <ellipse cx="450" cy="720" rx="50" ry="22" fill="#16A34A"/>
+
+  <!-- Grand Shikara Wooden Boat (Centerpiece) -->
+  <g transform="translate(100, 240)">
+    <!-- Wooden Hull -->
+    <path d="M50 250 Q200 280 400 280 Q650 280 750 210 Q600 240 400 240 Q180 240 50 250 Z" fill="#451A03"/>
+    <path d="M70 245 Q400 270 730 215" stroke="#78350F" stroke-width="4" fill="none"/>
+
+    <!-- Woven Bamboo / Coir Arch Canopy -->
+    <path d="M180 240 C180 120, 260 80, 420 80 C580 80, 640 120, 640 240 Z" fill="url(#canopyGrad)" stroke="#B45309" stroke-width="4"/>
+    <path d="M220 240 C220 140, 290 100, 420 100 C550 100, 600 140, 600 240 Z" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+
+    <!-- White Cushioned Seating inside Shikara -->
+    <rect x="260" y="200" width="300" height="35" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <circle cx="320" cy="190" r="14" fill="#EC4899"/>
+    <circle cx="480" cy="190" r="14" fill="#3B82F6"/>
+
+    <!-- Boatman Oar / Bamboo Pole -->
+    <line x1="720" y1="180" x2="790" y2="340" stroke="#78350F" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Water Reflections & Ripples -->
+  <path d="M150 560 Q300 545 450 560 T750 560 T900 560" stroke="#7DD3FC" stroke-width="4" fill="none" opacity="0.6"/>
+  <path d="M200 590 Q400 575 600 590 T850 590" stroke="#BAE6FD" stroke-width="3" fill="none" opacity="0.5"/>
+
+  <!-- Placeholder Badge -->
+  <rect x="140" y="40" width="720" height="130" rx="20" fill="#075985" fill-opacity="0.9" stroke="#38BDF8" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="500" y="85" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#FDE047" text-anchor="middle" letter-spacing="2">
+    RESORT JETTY • SHIKARA CANAL CRUISES
+  </text>
+  <text x="500" y="120" font-family="system-ui, sans-serif" font-size="15" fill="#E2E8F0" text-anchor="middle">
+    Actual Activity Photograph Slot • Replace with shikara-cruise.jpg (1000 × 800)
+  </text>
+  <text x="500" y="145" font-family="monospace" font-size="12" fill="#BAE6FD" text-anchor="middle">
+    Kuttanad Canal Excursions Departing from Punnamada Jetty
+  </text>
+</svg>

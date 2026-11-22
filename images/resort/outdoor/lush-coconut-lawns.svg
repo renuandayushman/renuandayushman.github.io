@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="outdoorSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#38BDF8"/>
+      <stop offset="60%" stopColor="#BAE6FD"/>
+      <stop offset="100%" stopColor="#FEF08A"/>
+    </linearGradient>
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#4ADE80"/>
+      <stop offset="100%" stopColor="#15803D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="500" fill="url(#outdoorSky)"/>
+  
+  <!-- Backwaters in midground -->
+  <path d="M0 430 Q250 410 500 430 T1000 430 L1000 490 L0 490 Z" fill="#0284C7" opacity="0.7"/>
+
+  <!-- Coconut Palms cluster left -->
+  <path d="M140 460 Q180 300 240 180" stroke="#78350F" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M240 180 Q320 120 400 160" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M240 180 Q160 110 80 150" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M240 180 Q260 80 270 50" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M240 180 Q190 90 150 70" stroke="#166534" stroke-width="8" fill="none"/>
+
+  <!-- Coconut Palms cluster right -->
+  <path d="M880 460 Q840 280 760 160" stroke="#78350F" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M760 160 Q660 110 580 150" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M760 160 Q840 100 920 140" stroke="#166534" stroke-width="8" fill="none"/>
+  <path d="M760 160 Q730 70 720 40" stroke="#166534" stroke-width="8" fill="none"/>
+
+  <!-- Manicured Lakeside Lawn -->
+  <rect x="0" y="470" width="1000" height="330" fill="url(#grassGrad)"/>
+
+  <!-- Stone Pathway -->
+  <path d="M460 800 Q480 650 510 520 Q520 480 500 470" stroke="#E2E8F0" stroke-width="36" stroke-linecap="round" fill="none" opacity="0.85"/>
+  <path d="M460 800 Q480 650 510 520 Q520 480 500 470" stroke="#CBD5E1" stroke-width="32" stroke-linecap="round" stroke-dasharray="14 10" fill="none"/>
+
+  <!-- Traditional Kerala String Lights / Fairy Lanterns between Palms -->
+  <path d="M240 180 Q500 240 760 160" stroke="#FDE047" stroke-width="3" stroke-dasharray="8 12" fill="none"/>
+  <circle cx="340" cy="205" r="7" fill="#F59E0B"/>
+  <circle cx="440" cy="222" r="7" fill="#EF4444"/>
+  <circle cx="540" cy="220" r="7" fill="#FDE047"/>
+  <circle cx="640" cy="202" r="7" fill="#3B82F6"/>
+
+  <!-- Wooden Garden Benches / Celebration Lawn Setup -->
+  <rect x="260" y="560" width="120" height="35" rx="6" fill="#78350F"/>
+  <line x1="280" y1="595" x2="280" y2="625" stroke="#451A03" stroke-width="6"/>
+  <line x1="360" y1="595" x2="360" y2="625" stroke="#451A03" stroke-width="6"/>
+
+  <!-- Placeholder Badge -->
+  <rect x="140" y="50" width="720" height="130" rx="20" fill="#064E3B" fill-opacity="0.85" stroke="#34D399" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="500" y="95" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#6EE7B7" text-anchor="middle" letter-spacing="2">
+    PUNNAMADA OUTDOOR LAWNS &amp; GARDENS
+  </text>
+  <text x="500" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#E2E8F0" text-anchor="middle">
+    Actual Outdoor Photograph Slot • Replace with outdoor-lawns.jpg (1000 × 800)
+  </text>
+  <text x="500" y="155" font-family="monospace" font-size="12" fill="#FDE047" text-anchor="middle">
+    Lakeside Wedding Vows &amp; Sunset High Tea Grounds
+  </text>
+</svg>
